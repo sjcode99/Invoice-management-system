@@ -25,8 +25,6 @@ const AllInvoices = () => {
   const [selectedInvoice, setSelectedInvoice] = useState(null);
   const dispatch = useDispatch();
 
-  //   console.log(selectedInvoiceById);
-
   const getInvoiceById = (id) => {
     const invoice = invoiceArray.find((item) => item.id === id);
     dispatch(setSelectedInvoiceById(invoice));

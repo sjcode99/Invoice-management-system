@@ -54,13 +54,9 @@ class InvoiceForm extends React.Component {
       this.props;
     const { isOpen, ...invoiceInfo } = this.state;
 
-    console.log(invoiceInfo);
-
     if (selectedInvoiceById !== null) {
-      console.log("entering");
       editInvoice(invoiceInfo);
     } else {
-      console.log("addInvoice");
       addInvoice({ ...invoiceInfo, id: uuid() });
     }
   }
@@ -68,7 +64,6 @@ class InvoiceForm extends React.Component {
   componentDidMount() {
     this.handleCalculateTotal();
     const selectedInvoiceById = this.props.selectedInvoiceById;
-    console.log(selectedInvoiceById);
     if (selectedInvoiceById) {
       this.setState({ isOpen: false, ...selectedInvoiceById });
     }
@@ -140,9 +135,7 @@ class InvoiceForm extends React.Component {
     };
     var items = this.state.items.slice();
     var newItems = items.map(function (items) {
-      console.log(items);
       for (var key in items) {
-        console.log(key);
         if (key == item.name && items.id == item.id) {
           items[key] = item.value;
         }

@@ -21,13 +21,7 @@ class App extends Component {
   render() {
     const showInvoiceForm = this.props.showInvoiceForm;
     const selectedInvoiceById = this.props.selectedInvoiceById;
-    // console.log(this.props);
     return (
-      // <div className="App d-flex flex-column align-items-center justify-content-center w-100">
-      //   <Container>
-      //     <InvoiceForm/>
-      //   </Container>
-      // </div>
       <div>
         <Container className="h-full w-70 p-4">
           <Button

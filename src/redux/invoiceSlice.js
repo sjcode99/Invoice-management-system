@@ -13,7 +13,6 @@ const invoiceSlice = createSlice({
     },
 
     setSelectedInvoiceById: (state, action) => {
-      console.log(action.payload);
       state.selectedInvoiceById = action.payload;
     },
 
@@ -30,8 +29,7 @@ const invoiceSlice = createSlice({
           : invoice
       );
       state.invoices = updatedInvoice;
-      state.selectedInvoiceById = null;
-      console.log(action.payload.id);
+      state.showInvoiceForm = false;
     },
 
     deleteInvoice: (state, action) => {
