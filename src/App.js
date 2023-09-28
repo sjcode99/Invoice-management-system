@@ -6,7 +6,7 @@ import InvoiceForm from "./components/InvoiceForm";
 import Button from "react-bootstrap/Button";
 import { connect } from "react-redux";
 import { toggleShowInvoiceForm } from "./redux/invoiceSlice";
-import AllInvoices from "./components/AllInvoices";
+import InvoiceList from "./components/InvoiceList";
 
 class App extends Component {
   closeFormModal() {
@@ -15,6 +15,10 @@ class App extends Component {
 
   openFormModal() {
     this.props.toggleShowInvoiceForm();
+  }
+
+  errorHandler(error, errorInfo) {
+    console.log(error, errorInfo);
   }
 
   render() {
@@ -37,7 +41,7 @@ class App extends Component {
           <div>
             <hr></hr>
           </div>
-          {showInvoiceForm ? <InvoiceForm /> : <AllInvoices />}
+          {showInvoiceForm ? <InvoiceForm /> : <InvoiceList />}
         </Container>
       </div>
     );

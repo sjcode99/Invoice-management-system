@@ -11,7 +11,7 @@ import {
   toggleShowInvoiceForm,
 } from "../redux/invoiceSlice";
 
-const AllInvoices = () => {
+const InvoiceList = () => {
   const invoiceArray = useSelector((state) => state.invoice?.invoices);
   // const selectedInvoiceById = useSelector(
   //   (state) => state.invoice?.selectedInvoiceById
@@ -123,4 +123,4 @@ const AllInvoices = () => {
   );
 };
 
-export default AllInvoices;
+export default InvoiceList;
