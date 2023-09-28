@@ -50,8 +50,7 @@ class InvoiceForm extends React.Component {
 
   handleInvoiceSubmit(e) {
     e.preventDefault();
-    const { showInvoiceForm, addInvoice, editInvoice, selectedInvoiceById } =
-      this.props;
+    const { addInvoice, editInvoice, selectedInvoiceById } = this.props;
     const { isOpen, ...invoiceInfo } = this.state;
 
     if (selectedInvoiceById !== null) {
@@ -187,7 +186,7 @@ class InvoiceForm extends React.Component {
                       style={{
                         maxWidth: "150px",
                       }}
-                      // required="required"
+                      required="required"
                     />
                   </div>
                 </div>
@@ -204,7 +203,7 @@ class InvoiceForm extends React.Component {
                     style={{
                       maxWidth: "70px",
                     }}
-                    // required="required"
+                    required="required"
                   />
                 </div>
               </div>
@@ -221,7 +220,7 @@ class InvoiceForm extends React.Component {
                     className="my-2"
                     onChange={(event) => this.editField(event)}
                     autoComplete="name"
-                    // required="required"
+                    required="required"
                   />
                   <Form.Control
                     placeholder={"Email address"}
@@ -231,7 +230,7 @@ class InvoiceForm extends React.Component {
                     className="my-2"
                     onChange={(event) => this.editField(event)}
                     autoComplete="email"
-                    // required="required"
+                    required="required"
                   />
                   <Form.Control
                     placeholder={"Billing address"}
@@ -241,7 +240,7 @@ class InvoiceForm extends React.Component {
                     className="my-2"
                     autoComplete="address"
                     onChange={(event) => this.editField(event)}
-                    // required="required"
+                    required="required"
                   />
                 </Col>
                 <Col>
@@ -255,7 +254,7 @@ class InvoiceForm extends React.Component {
                     className="my-2"
                     onChange={(event) => this.editField(event)}
                     autoComplete="name"
-                    // required="required"
+                    required="required"
                   />
                   <Form.Control
                     placeholder={"Email address"}
@@ -265,7 +264,7 @@ class InvoiceForm extends React.Component {
                     className="my-2"
                     onChange={(event) => this.editField(event)}
                     autoComplete="email"
-                    // required="required"
+                    required="required"
                   />
                   <Form.Control
                     placeholder={"Billing address"}
@@ -275,7 +274,7 @@ class InvoiceForm extends React.Component {
                     className="my-2"
                     autoComplete="address"
                     onChange={(event) => this.editField(event)}
-                    // required="required"
+                    required="required"
                   />
                 </Col>
               </Row>
@@ -426,7 +425,6 @@ class InvoiceForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    showInvoiceForm: state.invoice.showInvoiceForm,
     invoices: state.invoice.invoices,
     selectedInvoiceById: state.invoice.selectedInvoiceById,
   };
@@ -435,7 +433,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addInvoice: (invoiceInfo) => dispatch(addInvoice(invoiceInfo)),
     editInvoice: (invoice) => dispatch(editInvoice(invoice)),
-    // dispatch(editInvoice({ id: invoice.id, ...invoice })),
   };
 };
 

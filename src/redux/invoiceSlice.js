@@ -37,6 +37,7 @@ const invoiceSlice = createSlice({
         (invoice) => invoice.id !== action.payload
       );
       state.invoices = filteredInvoices;
+      state.selectedInvoiceById = null;
     },
   },
 });

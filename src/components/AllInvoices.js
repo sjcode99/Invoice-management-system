@@ -5,7 +5,7 @@ import { AiFillEye, AiFillDelete } from "react-icons/ai";
 import { GoPencil } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  editInvoice,
+  // editInvoice,
   setSelectedInvoiceById,
   deleteInvoice,
   toggleShowInvoiceForm,
@@ -13,35 +13,34 @@ import {
 
 const AllInvoices = () => {
   const invoiceArray = useSelector((state) => state.invoice?.invoices);
-  const selectedInvoiceById = useSelector(
-    (state) => state.invoice?.selectedInvoiceById
-  );
-
-  const showInvoiceForm = useSelector(
-    (state) => state.invoice?.showInvoiceForm
-  );
-
+  // const selectedInvoiceById = useSelector(
+  //   (state) => state.invoice?.selectedInvoiceById
+  // );
   const [isOpen, setIsOpen] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
   const dispatch = useDispatch();
 
+  // get the invoice by id
   const getInvoiceById = (id) => {
     const invoice = invoiceArray.find((item) => item.id === id);
     dispatch(setSelectedInvoiceById(invoice));
     return invoice;
   };
 
+  // to view invoice
   const handleView = (id) => {
     setIsOpen(true);
     setSelectedInvoice(getInvoiceById(id));
   };
 
+  // to edit invoice
   const handleEdit = (id) => {
     getInvoiceById(id);
     dispatch(toggleShowInvoiceForm());
     // if (selectedInvoiceById) dispatch(editInvoice(selectedInvoiceById));
   };
 
+  // to delete invoice
   const handleDelete = (id) => {
     dispatch(deleteInvoice(id));
   };

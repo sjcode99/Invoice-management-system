@@ -6,7 +6,6 @@ import InvoiceForm from "./components/InvoiceForm";
 import Button from "react-bootstrap/Button";
 import { connect } from "react-redux";
 import { toggleShowInvoiceForm } from "./redux/invoiceSlice";
-// import InvoiceList from "./components/InvoiceList";
 import AllInvoices from "./components/AllInvoices";
 
 class App extends Component {
@@ -20,7 +19,7 @@ class App extends Component {
 
   render() {
     const showInvoiceForm = this.props.showInvoiceForm;
-    const selectedInvoiceById = this.props.selectedInvoiceById;
+
     return (
       <div>
         <Container className="h-full w-70 p-4">
@@ -48,7 +47,6 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     showInvoiceForm: state.invoice.showInvoiceForm,
-    selectedInvoiceById: state.invoice.selectedInvoiceById,
   };
 };
 
